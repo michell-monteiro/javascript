@@ -1,4 +1,12 @@
 @charset "UTF-8";
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+:root {
+    --font-padrao: Arial, Helvetica, sans-serif;
+}
 
 div.card{
     background-color: skyblue;
@@ -7,9 +15,55 @@ div.card{
     border: 1px solid black;
     display: inline-block;
     border-radius: 10px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.459);
 }
 div.card:hover{
     background-color: rgb(227, 245, 252);
     transition-duration: 0.7s;
     color: pink;
+}
+
+body {
+    background-color: rgb(213, 243, 255);
+}
+
+header {
+    background-image: linear-gradient(to bottom, skyblue, white);
+    height: 100px;
+    text-align: center;
+}
+header > h1 {
+    color: white;
+    font-family: var(--font-padrao);
+}
+
+nav {
+    background-color: white;
+    padding-right: 10px;
+    text-align: center;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.459);
+}
+nav > a {
+    color: rgb(72, 109, 124);
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 10px;
+    font-family: var(--font-padrao);
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.459);
+}
+
+nav > a:hover {
+    background-color: skyblue;
+    color: white;
+    transition-duration: 0.6s;
+    text-decoration: dashed;
+}
+
+main {
+    background-color: white;
+    max-width: 800px;
+    min-width: 350px;
+    margin: auto;
+    border-radius: 0px 0px 10px 10px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.493);
 }
