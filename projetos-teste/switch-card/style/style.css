@@ -75,3 +75,21 @@ main {
     border-radius: 0px 0px 10px 10px;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.493);
 }
+
+footer {
+    background-color: cornflowerblue;
+    text-align: center;
+    height: 20px;
+    padding: 5px;
+}
+footer > p {
+    color: white;
+}
+footer a {
+    color: white;
+    font-weight: bolder;
+    text-decoration: none;
+}
+footer a:hover {
+    text-decoration: overline;
+}
