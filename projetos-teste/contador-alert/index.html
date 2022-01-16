@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador</title>
+</head>
+<body>
+    <h1>Alert + Math.floor</h1>
+    <p>O Simples código abaixo tem como objetivo exibir um número aleatório de alerts para o usuário. O valor máximo a ser carregado é 21.</p>
+    <p>Logo de início, o visitante será avisado sobre quantas vezes a página será recarregada. No final da execução do <strong>for</strong>, essa informação será confirmada.</p>
+    <script>
+        var rand = Math.floor(Math.random() * 21);
+        var advice = 1;
+        for(let i = 0; i < rand; i++) {
+            if (advice == 1) {
+                alert("Atenção! A página vai recarregar " + rand + " vezes.");
+                advice--;
+            }
+            alert(i);
+        }
+        alert("A página foi recarregada " + rand + " vezes!");
+    </script>
+</body>
+</html>
