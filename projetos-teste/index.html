@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random itens</title>
+</head>
+<body>
+    <h1>Item Aleatório</h1>
+    <p>Essa página tem como finalidade apenas testar a função <strong>Math.random</strong> do Javascript. O intuito é apenas ficar recarregando a página para ver qual será o item sorteado.</p>
+    <script>
+        var rand = Math.floor(Math.random() * 6);
+        var chest = ["Sword's Queen", "Bag's Queen", "Shield's Queen", "Book's Queen", "Crow's Queen", "Cane's Queen"];
+        alert(chest[rand]);
+    </script>
+</body>
+</html>
