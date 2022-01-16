@@ -16,6 +16,7 @@ div.card{
     display: inline-block;
     border-radius: 10px;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.459);
+    padding: 20px;
 }
 div.card:hover{
     background-color: rgb(227, 245, 252);
@@ -40,6 +41,7 @@ header > h1 {
 nav {
     background-color: white;
     padding-right: 10px;
+    padding: 30px;
     text-align: center;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.459);
 }
