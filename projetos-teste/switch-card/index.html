@@ -5,50 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Change color - Cards</title>
-    <style>
-        div.card{
-            background-color: skyblue;
-            height: 150px;
-            width: 100px;
-            border: 1px solid black;
-            display: inline-block;
-        }
-        div.card:hover{
-            background-color: rgb(227, 245, 252);
-            transition-duration: 0.7s;
-            color: pink;
-        }
-    </style>
+    <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
-    <div class="card" onclick="flipcard()" id="c1"></div>
-    <div class="card" onclick="flipcard1()" id="c2"></div>
-    <div class="card" onclick="flipcard2()" id="c3"></div>
-    <button onclick="myFunction()">Try it</button>
-    <p id="demo"></p>
-
-    <script>
-        // abreviação de 'color pencil box' ou 'caixa de lápis de cor'
-        var cpenbox = ["black", "brown", "yellowgreen", "green", "aquamarine", "blue", "purple", "palevioletred", "pink", "red", "orange", "yellow"];
-
-        function flipcard() {
-            var rand = Math.floor(Math.random() * 12);
-            document.getElementById("c1").style.backgroundColor = cpenbox[rand];
-        }
-        function flipcard1() {
-            var rand = Math.floor(Math.random() * 12);
-            document.getElementById("c2").style.backgroundColor = cpenbox[rand];
-        }
-        function flipcard2() {
-            var rand = Math.floor(Math.random() * 12);
-            document.getElementById("c3").style.backgroundColor = cpenbox[rand];
-        }
-
-        //Verificando o id
-        function myFunction() {
-            var x = document.getElementsByClassName("card")[0].id;
-            document.getElementById("demo").innerHTML = x;
-        }
-    </script>
+    <header>
+        <h1>Change Color</h1>
+        <p>Clique nos cartões para mudar as cores</p>
+    </header>
+    <nav>
+        <a href="">Início</a>
+        <a href="">Sobre</a>
+    </nav>
+    <main>
+        <section>
+            <div class="card" onclick="flipcard()" id="c1"></div>
+            <div class="card" onclick="flipcard1()" id="c2"></div>
+            <div class="card" onclick="flipcard2()" id="c3"></div>
+            <button onclick="myFunction()">Try it</button>
+            <p id="demo"></p>
+        </section>
+        <aside>
+            
+        </aside>
+    </main>
+    <footer><p>Site criado por <strong>Michell Monteiro</strong>.</p></footer>
+    <script src="js/flipcard.js"></script>
 </body>
 </html>

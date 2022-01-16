@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+div.card{
+    background-color: skyblue;
+    height: 150px;
+    width: 100px;
+    border: 1px solid black;
+    display: inline-block;
+    border-radius: 10px;
+}
+div.card:hover{
+    background-color: rgb(227, 245, 252);
+    transition-duration: 0.7s;
+    color: pink;
+}
