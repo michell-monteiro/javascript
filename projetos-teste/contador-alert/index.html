@@ -11,7 +11,7 @@
     <p>O Simples código do site tem como objetivo exibir um número aleatório de alerts para o usuário. O valor máximo a ser carregado é 21.</p>
     <p>Logo de início, o visitante será avisado sobre quantas vezes a página será recarregada. No final da execução do <strong>for</strong>, essa informação será confirmada.</p>
     <script>
-        var rand = Math.floor(Math.random() * 3); // Número de 0 a 20 pode ser gerado
+        var rand = Math.floor(Math.random() * 21); // Número de 0 a 20 pode ser gerado
         var advice = 1;
         for(let i = 1; i <= rand; i++) {
             if (advice == 1) {
