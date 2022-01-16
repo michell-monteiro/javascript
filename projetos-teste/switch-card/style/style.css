@@ -36,6 +36,12 @@ header {
 header > h1 {
     color: white;
     font-family: var(--font-padrao);
+    padding: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.418);
+}
+header > p {
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.548);
 }
 
 nav {
@@ -63,7 +69,7 @@ nav > a:hover {
 
 main {
     background-color: white;
-    max-width: 800px;
+    max-width: 730px;
     min-width: 350px;
     margin: auto;
     border-radius: 0px 0px 10px 10px;
