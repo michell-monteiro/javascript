@@ -11,10 +11,5 @@ function flipcard1() {
 }
 function flipcard2() {
     var rand = Math.floor(Math.random() * 12);
-    document.getElementById("c3").style.backgroundColor = cpenbox[rand]}
-
-//Verificando o id
-function myFunction() {
-    var x = document.getElementsByClassName("card")[0].id;
-    document.getElementById("demo").innerHTML = x;
+    document.getElementById("c3").style.backgroundColor = cpenbox[rand];
 }
