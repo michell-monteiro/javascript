@@ -7,11 +7,10 @@
     <title>Alterando o Css</title>
 </head>
 <body>
-    <script>
-        function highlight(e){
-            if(!e.className) e.className = "hilite";
-            else e.className += " hilite";
-        }
-    </script>
+    <script src="funcoes.js"></script>
+    Hello
+    <button onclick="hide(this, true); debug('hide button 1');">Hide1</button>
+    <button onclick="hide(this); debug('hide button 2');">Hide2</button>
+    World
 </body>
 </html>
