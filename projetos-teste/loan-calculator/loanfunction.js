@@ -79,12 +79,42 @@ function getLenders(amount, apr, years, zipcode) {
     var ad = document.getElementById("lenders");
     if (!ad) return;
 
-    var url = "getLenders.php" + "?amt=" + encodeURIComponent(amount) + "&apr=" + encodeURIComponent(apr) + "&yrs=" + encodeURIComponent(years) + "&zip=" encodeURIComponent(zipcode);
+    var url = "getLenders.php" + "?amt=" + encodeURIComponent(amount) + "&apr=" + encodeURIComponent(apr) + "&yrs=" + encodeURIComponent(years) + "&zip=" + encodeURIComponent(zipcode);
 
     //Busca o conteúdo desse URL usando o objeto XMLHttpRequest
     var req = new XMLHttpRequest();
     req.open("GET", url);
     req.send(null);
 
-    //pÁGINA 34 (16) Continuar
+    //Antes de retornar, registra uma função de rotina de tratamento de evento que será chamada em um momento posterior, quando a resposta do servidor de HTTP chegar. Esse tipo de programação assíncrona é muito comum em Javascript do lado do cliente.
+    req.onreadystatechange = function() {
+        if(req.readyState == 4 && req.status == 200) {
+            //Se chegamos até aqui, obtivemos uma resposta HTTP válida e completa
+            var response = req.responseText; // Resposta HTTP como string
+            var lenders = JSON.parse(response); // Analisa em um array JS
+        
+            // Converte o array de objetos lender em uma string HTML
+            var list = "";
+            for (var i = 0; i < lenders.length; i++) {
+                list += "<li><a href='" + lenders[i].url + "'>" + lenders[i].name + "</a>";
+            }
+            // Exibe o código HTML no elemento acima
+            ad.innerHTML = "<ul>" + list + "</ul>";
+
+        }
+        
+    }
+}
+
+// Faz o gráfico do saldo devedor mensal, dos juros e do capital em um elemento <canvas> da HTML.
+// Se for chamado sem argumentos, basta apagar qualquer gráfico desenhado anteriormente.
+function chart(principal, interest, monthly, payments) {
+    var graph = document.getElementById("graph"); //Obtém a marca <canvas>
+    graph.width = graph.width; // Mágica para apagar e redefinir o elemento canvas
+    //Se chamamos sem argumentos ou se esse navegador não suporta elementos gráficos em um elemento <canvas>, basta retornar agora.
+    if(arguments.length == 0 || !graph.getContext) return;
+
+    //Obtém o objeto "contexto" de <canvas> que define a API de desenho
+    var g = graph.getContext("2d"); // Todo desenho é feito com esse objeto
+    var width = graph.width, height = graph.height; // Obtém o tamanho da tela do desenho
 }
