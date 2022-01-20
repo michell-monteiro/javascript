@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Função load em ação</title>
+</head>
+<body>
+    <script>
+        window.onload = function() {
+    var images = document.getElementsByTagName("img");
+    
+    for(var i = 0; i < images.length; i++) {
+        var image = images[i];
+        if(image.addEventListener) {
+            image.addEventListener("click", hide, false);
+        } else {
+            image.attachEvent("onclick", hide);
+        }            
+    }
+    function hide(event) {
+        event.target.style.visibility = "hidden";
+    }
+}
+    </script>
+</body>
+</html>
