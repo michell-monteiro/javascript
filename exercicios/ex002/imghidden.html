@@ -8,21 +8,28 @@
 </head>
 <body>
     <script>
-        window.onload = function() {
-    var images = document.getElementsByTagName("img");
-    
-    for(var i = 0; i < images.length; i++) {
-        var image = images[i];
-        if(image.addEventListener) {
-            image.addEventListener("click", hide, false);
-        } else {
-            image.attachEvent("onclick", hide);
-        }            
-    }
-    function hide(event) {
-        event.target.style.visibility = "hidden";
-    }
-}
+            window.onload = function() {
+            // Identifica a todos os elementos "img", os conta, e os armazena na var images
+            var images = document.getElementsByTagName("img");
+            
+            //
+            for(var i = 0; i < images.length; i++) {
+                var image = images[i];
+                if(image.addEventListener) {
+                    image.addEventListener("click", hide, false);
+                } else {
+                    image.attachEvent("onclick", hide);
+                }            
+            }
+            function hide(event) {
+                event.target.style.visibility = "hidden";
+            }
+        }
     </script>
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
 </body>
 </html>
