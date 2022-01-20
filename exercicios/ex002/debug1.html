@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudando função de debug</title>
+</head>
+<body>
+    <script>
+        var prompt = prompt("Digite um texto");
+        function consoleLog(msg) {
+            var console = document.getElementById("debug");
+            if(!console) {
+                var console = document.createElement("div");
+                console.id = "debug";
+                console.innerHTML = "<h1>Function Debug</h1>"
+                document.body.appendChild(console);
+            }
+            var pre = document.createElement("pre");
+            var text = document.createTextNode(msg);
+            pre.appendChild(text);
+            console.appendChild(pre);
+        }
+        consoleLog(prompt);
+    </script>
+</body>
+</html>
