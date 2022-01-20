@@ -142,8 +142,43 @@ for (var p = 1; p <= payments; p++) {
     // Para cada pagamento, descobre quanto é o juro
     var thisMonthsInterest = (principal-equity)*interest;
     equity += (monthly - thisMonthsInterest); // O resto vai para o capital
-    g.lineTo(paymentToX(p), amountToY(equity)); //Linha até este ponto
+    g.lineTo(paymentToX(p), amountToY(equity)); //inha até este ponto
 }
+g.lineTo(paymentToX(payments), amountToY(0)); // Linha de volta para o eixo X
+g.closePath(); //E volta para o ponto inicial
+g.fillStyle = "green"; // Agora usa tinta verde
+g.fill(); // E preenche a área sob a curva
+g.fillText("Total Equity", 20,35); // Rotula em verde
+
+//Faz laço novamente, como acima, mas representa o saldo devedor como ma linha preta grossa no gráfico
+var bal = principal;
+g.beginPath();
+g.moveTo(paymentToX(0), amountToY(bal));
+for(var p = 1; p <= payments; p++) {
+    var thisMonthsInterest = bal*interest;
+    bal -= (monthly - thisMonthsInterest); // O resto vai para o capital
+    g.lineTo(paymentToX(p), amountToY(bal)); // Desenha a linha até esse ponto
+}
+g.lineWidth = 3; // Usa uma linha grossa
+g.stroke(); // Desenha a curva do saldo
+g.fillStyle = "black"; // Troca para texto preto
+g.fillText("Loan Balance", 20,50); //Entrafa da legenda
+
+//Agora faz marcações anuais e os números de ano no eixo X
+g.textAlign = "center"; // Centraliza o texto nas marcas
+
+var y = amountToY(0); // coordenada Y e do eixo X
+for (var year=1; year*12 <= payments; year++) { // Para casa ano
+    var x = paymentToX(year*12); // Calcula a posição da marca
+    g.fillRect(x-0.5,y-3,1,3); // Desenha a marca
+    if (year == 1) g.fillText("Year", x, y-5); // Rotula o eixo
+
+    if (year % 5 == 0 && year*12 !== payments) // Número cada 5 anos
+        g.fillText(String(year), x, y-5);
+}
+
+// Marca valores de pagamento ao longo da margem direita
+g.textA
 
 
 
