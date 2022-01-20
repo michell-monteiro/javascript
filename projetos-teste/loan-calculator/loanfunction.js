@@ -32,6 +32,59 @@ function calculate() {
 
         //Salva a entrada do usuário para que possamos na próxima vez que ele visitar
         save(amount.value, apr.value, years.value, zipcode.value);
+
+        //Anúncio: localiza e exive financeiras locais, mas igonra erros de rede
+        try {
+            getLenders(amount.value, apr.value, years.value, zipcode.value);
+        }
+        catch(e) {/*Ignora esses erros*/}
+
+        // Por fim, traça o gráfico do saldo devedor, dos juros e dos pagamentos do capital
+        chart(principal, interest, monthly, payments);
+    } else {
+        // O resultado foi NaN ou infinito, o que significa que a entrada estava imcompleta ou era inválida. Apaga qualquer saída exibida anteriormente.
+        payment.innerHTML = "";
+        total.innerHTML = "";
+        totalinterest.innerHTML = "";
+        chart();
     }
 }
 
+//Salva a entrada do usuário como propriedades do objeto localStorage. Essas propriedades ainda existirão quando o usuário visitar no futuro.
+//Esse recurso de armazenamento não vai funcionar em alguns navegadores (O firefox, por exemplo), se você executar o exemplo a partir de um arquivo local://URL. Contudo, funciona com http.
+
+function save(amount, apr, years, zipcode) {
+    if(window.localStorage) {
+        localStorage.loan_amount = amount;
+        localStorage.loan_apr = apr;
+        localStorage.loan_years = years;
+        localStorage.loan_zipcode = zipode;
+    }
+}
+
+//Tenta restaurar os campos de entrada automaticamente quando o documento é carregado pela primeira vez.
+window.onload = function() {
+    // Se o navegador suporta localStorage e temos alguns dados armazenados
+    if(window.localStorage && localStorage.loan_amount) {
+        document.getElementById("amount").value = localStorage.loan_amount;
+        document.getElementById("apr").value = localStorage.loan_apr;
+        document.getElementById("years").value = localStorage.loan_years;
+        document.getElementById("zipcode").value = localStorage.loan_zipcode;
+    }
+};
+
+function getLenders(amount, apr, years, zipcode) {
+    if(!window.XMLHttpRequest) return;
+
+    var ad = document.getElementById("lenders");
+    if (!ad) return;
+
+    var url = "getLenders.php" + "?amt=" + encodeURIComponent(amount) + "&apr=" + encodeURIComponent(apr) + "&yrs=" + encodeURIComponent(years) + "&zip=" encodeURIComponent(zipcode);
+
+    //Busca o conteúdo desse URL usando o objeto XMLHttpRequest
+    var req = new XMLHttpRequest();
+    req.open("GET", url);
+    req.send(null);
+
+    //pÁGINA 34 (16) Continuar
+}
