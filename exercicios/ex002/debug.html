@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Função de debug</title>
+</head>
+<body>
+    <script>
+        /*O código abaixa cria uma mensagem de texto*/
+
+        // Recebe um texto e o armazena em uma variável
+        var txt = prompt("Digite um texto");
+
+        function debug(msg) {
+
+            //var log recebe um elemento pelo seu id. Contudo ele não existe.
+            var log = document.getElementById("debuglog");
+
+            //Se ele não existir...
+            if (!log) {
+
+                //Cria-se um elemento div
+                log = document.createElement("div");
+
+                //Com o id desejado
+                log.id = "debuglog";
+                
+                //Dentro da div, é criado um h1 com o texto "Debug log"
+                log.innerHTML = "<h1>Debug log</h1>";
+
+                //Adiciona-o no documento
+                document.body.appendChild(log);
+            }
+
+            var pre = document.createElement("pre");
+            var text = document.createTextNode(msg);
+            pre.appendChild(text);
+            log.appendChild(pre);
+        }
+        debug(txt);
+    </script>
+</body>
+</html>
