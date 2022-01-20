@@ -118,3 +118,32 @@ function chart(principal, interest, monthly, payments) {
     var g = graph.getContext("2d"); // Todo desenho é feito com esse objeto
     var width = graph.width, height = graph.height; // Obtém o tamanho da tela do desenho
 }
+
+// Essas funções convertem números d epagamento e valores monetários em pixels
+function paymentToX(n) {return n * width/payments;}
+function amountToY(a) {return height-(a * height/(monthly*payments*1.05));}
+
+// Os pagamentos são uma linha reta de (0, 0) a (payments, monthly*payments)
+g.moveTo(paymentToX(0), amountToY(0)); // Começa no canto inferior esquerdo
+g.lineTo(paymentToX(payments), amountToY(monthly*payments));  // Desenha até o canto superior direito
+g.lineTo(paymentToX(payments), amountToY(0)); // Para baixo, até o canto inferior direito
+g.closePath(); // E volta ao início
+g.fillStyle = "#f88"; //Vermelho-claro
+g.fill(); // Preenche o triângulo
+g.font = "bold 12px sans-serif"; // Define uma fonte
+g.fillText("Total Interest Payments", 20, 20); // Desenha texto na legenda
+
+// O capital acumulado não é linear e é mais complicado de representar no gráfico
+var equity = 0;
+g.beginPath(); // Inicia uma nova figura
+g.moveTo(paymentToX(0), amountToY(0)); // começando no canto inferior esquerdo
+
+for (var p = 1; p <= payments; p++) {
+    // Para cada pagamento, descobre quanto é o juro
+    var thisMonthsInterest = (principal-equity)*interest;
+    equity += (monthly - thisMonthsInterest); // O resto vai para o capital
+    g.lineTo(paymentToX(p), amountToY(equity)); //Linha até este ponto
+}
+
+
+
