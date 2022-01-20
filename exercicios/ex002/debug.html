@@ -33,10 +33,16 @@
                 //Adiciona-o no documento
                 document.body.appendChild(log);
             }
-
+            // Cria uma tag pre
             var pre = document.createElement("pre");
+
+            //Coloca a mensagem em um nó
             var text = document.createTextNode(msg);
+
+            //Adiciona a mensagem dentro da tag pre
             pre.appendChild(text);
+
+            //Adiciona o pre no log
             log.appendChild(pre);
         }
         debug(txt);
