@@ -18,6 +18,9 @@
 
             // Cria uma figura 2d
             var ctx = stage.getContext('2d');
+            
+            //Toda vez que uma tecla for pressionada (tecla down)
+            document.addEventListener("keydown", keyPush);
 
             //Determina um cooldown de quanto tempo a função deve ser chamada
             setInterval(game, 60);
@@ -75,11 +78,33 @@
                     trail.shift();
                 }
 
+                // Se a posição da maçã for igual a da cabeça da cobra
                 if (ax==px && ay==py) {
-                    tail++;
-                    ax = Math.floor(Math.random()*qp);
+                    tail++;//Cresce a cauda
+                    ax = Math.floor(Math.random()*qp); // Randomiza o spawn da Maçã
                     ay = Math.floor(Math.random()*qp);
                 }
+        }
+
+        function keyPush(event) {
+            //Verifica qual tecla foi pressionada
+            switch(event.keyCode) {
+                case 37: //left
+                    vx = -vel;
+                    vy = 0;
+                    break;
+                case 38: // up
+                    vx = 0;
+                    vy = -vel;
+                    break;
+                case 39: // right
+                    vx = vel;
+                    vy = 0;
+                    break
+                case 40: // down
+                    vx = 0;
+                    vy = vel;
+            }
         }
     }
 
