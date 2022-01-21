@@ -6,6 +6,11 @@ class Overworld {
     }
 
     init() {
-        console.log("Hello from this world!", this);
+        const image = new Image();
+        image.onload = () => {
+            //Desenha o objeto Image, posição x = 0, posição 0
+            this.ctx.drawImage(image, 0, 0);
+        };
+        image.src = "/images/maps/DemoLower.png";
     }
 }
