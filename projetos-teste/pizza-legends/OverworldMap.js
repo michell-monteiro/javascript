@@ -20,7 +20,7 @@ class OverworldMap {
 }
 
 //A configuração de todos os mapas
-window.OverworldMap = {
+window.OverworldMaps = {
     DemoRoom: {
         lowerSrc: "images/maps/DemoLower.png",
         upperSrc: "images/maps/DemoUpper.png",
