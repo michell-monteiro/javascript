@@ -12,14 +12,38 @@
 
         // Carregar a página
         window.onload = function() {
-            // pega o id do canvas e o carrega
+
+            // Pega o id do canvas e o carrega
             var stage = document.getElementById('stage');
+
+            // Cria uma figura 2d
             var ctx = stage.getContext('2d');
 
-            ctx.fillStyle = 'black';
-            ctx.fillRect(0, 0, stage.clientWidth, stage.clientHeight);
-        }
+            //Determina um cooldown de quanto tempo a função deve ser chamada
+            setInterval(game, 60);
 
+            // Velocidade da cobra. Determina quantos quadrados a cobra vai andar cada vez que a função game executar
+            const vel = 1;
+            var vx = vy = 0; // Velocidade x e y são iguais a zero
+            var px = py = 10; //O spawn será nas coordenadas x=10 e y=10
+            var lp = 20; //largura peça, tamanho
+            var qp = 20; // Quantidade peças
+            var ax = ay = 15; // posição inicial da apple (var ax e ay == applex e appley
+
+            var trail = []; // Variável que determina o rastro, o tamanho do caldo
+            tail = 5;
+
+            function game() {
+                px
+
+
+                // Enche a tela de preto
+                ctx.fillStyle = 'black';
+
+                //Determina que o enchimento de preto será do ponto x = 0 e y = 0. Ele vai pintar todo o width e height determinado na propriedade width e height na tag "canvas"
+                ctx.fillRect(0, 0, stage.clientWidth, stage.clientHeight);
+        }
+    }
 
 
     </script>
