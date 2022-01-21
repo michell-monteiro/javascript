@@ -26,7 +26,7 @@
             const vel = 1;
             var vx = vy = 0; // Velocidade x e y são iguais a zero
             var px = py = 10; //O spawn será nas coordenadas x=10 e y=10
-            var lp = 20; //largura peça, tamanho
+            var tp = 20; //Tamanho peça, tamanho
             var qp = 20; // Quantidade peças
             var ax = ay = 15; // posição inicial da apple (var ax e ay == applex e appley
 
@@ -34,14 +34,33 @@
             tail = 5;
 
             function game() {
-                px
-
-
+                //Sempre que essa função for executada, a posição da cobra deve ser atualizada
+                px += vx;
+                py += vy;
+                if (px < 0) {
+                    px = qp-1
+                }
+                if (px > qp-1) {
+                    px = 0;
+                }
+                if (py < 0) {
+                    py = qp-1;
+                }
+                if (py > qp-1) {
+                    py = 0;
+                }
                 // Enche a tela de preto
                 ctx.fillStyle = 'black';
 
                 //Determina que o enchimento de preto será do ponto x = 0 e y = 0. Ele vai pintar todo o width e height determinado na propriedade width e height na tag "canvas"
                 ctx.fillRect(0, 0, stage.clientWidth, stage.clientHeight);
+
+                //Cria a maçã
+                ctx.fillStyle = "red";
+                ctx.fillRect(ax*tp, ay*tp, tp, tp);
+
+                ctx.fillStyle = "gray";
+                ctx.
         }
     }
 
