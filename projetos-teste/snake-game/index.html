@@ -64,6 +64,7 @@
 
                 ctx.fillStyle = "gray";
                 for(var i = 0; i < trail.length; i++) {
+                    // colocar os ultimos dois parâmetros tp com tp-1 faz com que a cobrinha tenha um corpo quadriculado
                     ctx.fillRect(trail[i].x*tp, trail[i].y*tp, tp-1, tp-1);
 
                     //Se algum elemento da calda está no mesmo lugar da cabeça. Se sim, Gameover
