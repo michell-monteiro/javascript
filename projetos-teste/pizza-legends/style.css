@@ -1,5 +1,21 @@
 @charset "UTF-8";
 
+* {
+    /* padding e margin não atribuidos automaticamente*/
+    box-sizing: border-box;
+}
+
 body {
-    background-color: orange;
+    background-color: #333;
+    padding: 0;
+    margin: 0;
+    /* A propriedade overflow verifica se deve cortar o conteúdo ou adicionar uma scrollbar quando o conteúdo de um elemento for muito maior do que a área especificada. */
+    overflow: hidden; 
+}
+
+.game-container {
+    position: relative;
+    width: 352px;
+    height: 198px;
+    outline: 1px solid #ffff;
 }
