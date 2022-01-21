@@ -9,13 +9,16 @@ class Overworld {
     startGameLoop() {
         // Executa a função constantemente
         const step = () => {
-            // console.log("stepping"); Mostra no console que a função está funcionando
+
+            //Limpa o canvas toda vez que algo se mover
+            this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
             //Desenha a camada mais baixa (Lower layer)
             this.map.drawLowerImage(this.ctx);
 
             // Desenha os Game objects
             Object.values(this.map.gameObjects).forEach(object => {
+                // object.x += 0.05;
                 object.sprite.draw(this.ctx);
             })
 
