@@ -72,7 +72,13 @@
                 //Cria um objeto com a posição atual
                 trail.push({x:px, y:py})
                 while(trail.length > tail) {
-                    
+                    trail.shift();
+                }
+
+                if (ax==px && ay==py) {
+                    tail++;
+                    ax = Math.floor(Math.random()*qp);
+                    ay = Math.floor(Math.random()*qp);
                 }
         }
     }
