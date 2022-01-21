@@ -14,8 +14,8 @@ class Overworld {
         image.src = "images/maps/DemoLower.png";
 
         // Desenha o personagem principal na tela
-        const x = 0;
-        const y = 0;
+        const x = 1;
+        const y = 4;
         const hero = new Image();
         hero.onload = () => {
             this.ctx.drawImage(
@@ -24,8 +24,8 @@ class Overworld {
                 0, // Top cut
                 32, // width of cut
                 32, // height of cut
-                x, // Position x to draw
-                y, // position y to draw
+                x * 16 - 8, // Position x to draw (x e y são multiplicados por 16, que é valor do tile-set do mapa Demolower)
+                y * 16 - 18, // position y to draw
                 32, // Tamanho natural do sprite
                 32
                 );
