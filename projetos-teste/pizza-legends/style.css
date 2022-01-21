@@ -18,6 +18,13 @@ body {
     width: 352px;
     height: 198px;
     margin: 0 auto;
-    margin-top: 20px;
     outline: 1px solid #ffff;
+
+    /* Multiplica pixel por pixel da tela por um valor absoluto (3 no caso) */
+    transform: scale(3) translateY(35%);
+}
+
+.game-container canvas{
+    /* Renderiza a imagem da tela pixel por pixel */
+    image-rendering: pixelated;
 }

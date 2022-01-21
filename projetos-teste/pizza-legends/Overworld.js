@@ -11,6 +11,8 @@ class Overworld {
             //Desenha o objeto Image, posição x = 0, posição 0
             this.ctx.drawImage(image, 0, 0);
         };
-        image.src = "/images/maps/DemoLower.png";
+        image.src = "images/maps/DemoLower.png";
+
+        const hero = new Image();
     }
 }
