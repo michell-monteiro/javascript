@@ -38,7 +38,7 @@ class Sprite {
 
         this.isShadowLoaded && ctx.drawImage(this.shadow, x, y)
 
-        this.isLoaded && ctx.drawImage(this.Image,
+        this.isLoaded && ctx.drawImage(this.image,
             0,0,
             32,32,
             x,y,
