@@ -60,7 +60,20 @@
                 ctx.fillRect(ax*tp, ay*tp, tp, tp);
 
                 ctx.fillStyle = "gray";
-                ctx.
+                for(var i = 0; i < trail.length; i++) {
+                    ctx.fillRect(trail[i].x*tp, trail[i].y*tp, tp, tp);
+
+                    //Se algum elemento da calda está no mesmo lugar da cabeça. Se sim, Gameover
+                    if (trail[i].x == px && trail[i].y == py) {
+                        vx = vy = 0;
+                    }
+                }
+
+                //Cria um objeto com a posição atual
+                trail.push({x:px, y:py})
+                while(trail.length > tail) {
+                    
+                }
         }
     }
 
