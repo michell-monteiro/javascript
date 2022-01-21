@@ -5,7 +5,21 @@ class Overworld {
         this.ctx = this.canvas.getContext("2d");
     }
 
+    startGameLoop() {
+        // Executa a função constantemente
+        const step = () => {
+            // console.log("stepping"); Mostra no console que a função está funcionando
+            requestAnimationFrame(() => {
+                step();
+            })
+        }
+        step();
+    }
+
     init() {
+
+        this.startGameLoop();
+
         const image = new Image();
         image.onload = () => {
             //Desenha o objeto Image, posição x = 0, posição 0
