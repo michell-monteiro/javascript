@@ -2,7 +2,7 @@ class Person extends GameObject {
     constructor(config) {
         super(config);
         //Movimenta o personagem de acordo com o valor restante (32)
-        this.movingProgressRemaining = 32;
+        this.movingProgressRemaining = 0;
 
         this.direction = "down";
 
@@ -16,6 +16,11 @@ class Person extends GameObject {
 
     update(state) {
         this.updatePosition();
+
+        if (this.movingProgressRemaining === 0 && state.arrow) {
+            this.direction = state.arrow;
+            this.movingProgressRemaining = 16;
+        }
     }
 
     // Verifica em qual posição o personagem está
