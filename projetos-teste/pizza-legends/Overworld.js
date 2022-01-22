@@ -19,7 +19,7 @@ class Overworld {
             // Desenha os Game objects
             Object.values(this.map.gameObjects).forEach(object => {
                 object.update({
-                    
+
                 })
                 object.sprite.draw(this.ctx);
             })
@@ -37,6 +37,10 @@ class Overworld {
     init() {
         // Para alterar o mapa, basta trocar o último parâmetro atribuido em this.map (tente substituir DemoRoom por outro nome definido em OverworldMap)
         this.map = new OverworldMap(window.OverworldMaps.DemoRoom);
+
+        this.directionInput = new DirectionInput();
+        this.directionInput.init();
+
         this.startGameLoop();
 
     }
