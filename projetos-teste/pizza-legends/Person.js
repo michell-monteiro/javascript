@@ -4,7 +4,7 @@ class Person extends GameObject {
         //Movimenta o personagem de acordo com o valor restante (32)
         this.movingProgressRemaining = 0;
 
-        this.direction = "down";
+        this.isPlayerControlled = config.isPlayerControlled || false;
 
         this.directionUpdate = {
             "up": ["y", -1],
@@ -17,7 +17,8 @@ class Person extends GameObject {
     update(state) {
         this.updatePosition();
 
-        if (this.movingProgressRemaining === 0 && state.arrow) {
+        // Relacionado ao movimento / Checa se o player está se movendo
+        if (this.isPlayerControlled && this.movingProgressRemaining === 0 && state.arrow) {
             this.direction = state.arrow;
             this.movingProgressRemaining = 16;
         }
