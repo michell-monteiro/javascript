@@ -25,17 +25,18 @@ window.OverworldMaps = {
         lowerSrc: "images/maps/DemoLower.png",
         upperSrc: "images/maps/DemoUpper.png",
         gameObjects: {
+            //Instancia o objetos no mapa
             hero: new Person({
                 // Faz com que apenas o player se mova por comando
                 isPlayerControlled: true,
-                x: utils.withGrid(5),
+                x: utils.withGrid(5), //Posição que vai aparecer
                 y: utils.withGrid(6),
             }),
-            npc1: new Person ({
-                x: utils.withGrid(7),
-                y: utils.withGrid(9),
-                src: "images/characters/people/npc1.png"
-            })
+            // npc1: new Person ({
+            //     x: utils.withGrid(7),
+            //     y: utils.withGrid(9),
+            //     src: "images/characters/people/npc1.png"
+            // })
         }
     },
     Kitchen: {
