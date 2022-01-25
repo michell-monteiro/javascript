@@ -18,8 +18,12 @@
 
     <script>
         // O comando prompt retorna por padrão strings. Para mudar isso, fazemos uma conversão.
-        var n1 = Number.parseInt(prompt("Digite o primeiro número"));
-        var n2 = Number.parseInt(prompt("Digite o segundo número"));
+        //Number.parseInt() Converte para valores inteiros
+        //Number.parseFloat() Converte para valores flutuantes
+        //Number() O Javascript detecta por conta o tipo
+        //Para converter números em strings: String(n) ou n.toString()
+        var n1 = Number(prompt("Digite o primeiro número"));
+        var n2 = Number(prompt("Digite o segundo número"));
         var soma = n1+n2;
         alert("A soma é: " + soma);
     </script>
