@@ -31,7 +31,7 @@ class Sprite {
             "walk-left": [[1,3], [0,3], [3,3], [0,3]]
         }
         // Determina qual frame será utilizado. Por padrão será 'idleDown'
-        this.currentAnimation = "walk-down"; //config.currentAnimation || "idle-down";
+        this.currentAnimation = "idle-down"; //config.currentAnimation || "idle-down";
         this.currentAnimationFrame = 0;
 
         //Determina quantos frames a animação vai ter. >16 = slow / <16 = fast

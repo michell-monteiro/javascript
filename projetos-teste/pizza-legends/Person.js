@@ -35,6 +35,6 @@ class Person extends GameObject {
     }
 
     updateSprite(state) {
-
+        this.sprite.setAnimation("idle-"+this.direction);
     }
 }
