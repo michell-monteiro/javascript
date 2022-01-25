@@ -16,6 +16,7 @@ class Person extends GameObject {
 
     update(state) {
         this.updatePosition();
+        this.updateSprite(state);
 
         // Relacionado ao movimento / Checa se o player está se movendo
         if (this.isPlayerControlled && this.movingProgressRemaining === 0 && state.arrow) {
@@ -31,5 +32,9 @@ class Person extends GameObject {
             this[property] += change;
             this.movingProgressRemaining -= 1;
         }
+    }
+
+    updateSprite(state) {
+
     }
 }
