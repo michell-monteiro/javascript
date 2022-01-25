@@ -17,8 +17,9 @@
     <p>Testando Alert</p>
 
     <script>
-        var n1 = prompt("Digite o primeiro número");
-        var n2 = prompt("Digite o segundo número");
+        // O comando prompt retorna por padrão strings. Para mudar isso, fazemos uma conversão.
+        var n1 = Number.parseInt(prompt("Digite o primeiro número"));
+        var n2 = Number.parseInt(prompt("Digite o segundo número"));
         var soma = n1+n2;
         alert("A soma é: " + soma);
     </script>
